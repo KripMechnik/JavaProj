@@ -30,7 +30,6 @@ public class Window_3 extends JFrame {
         for (int i = 0; i < 2; i ++){
             lb.setLocation(lb.getX()+303, 0);
             window.repaint();
-            System.out.println("pp");
             Thread.currentThread().sleep(1000);
         }
 

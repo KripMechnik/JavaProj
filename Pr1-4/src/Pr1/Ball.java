@@ -3,10 +3,12 @@ package Pr1;
 public class Ball {
     private String color;
     private int radius;
-    public Ball (String c, int r){
-        color = c;
-        radius = r;
+
+    public Ball(String color, int radius) {
+        this.color = color;
+        this.radius = radius;
     }
+
     public Ball (String c){
         color = c;
         radius = 0;
@@ -29,10 +31,12 @@ public class Ball {
     public int getRadius() {
         return radius;
     }
+    @Override
     public String toString(){
         return this.color+", radius "+this.radius;
     }
     public void print(){
-        System.out.println(this.toString());
+        System.out.println(this);
     }
+
 }

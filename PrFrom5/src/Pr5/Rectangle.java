@@ -20,7 +20,8 @@ public class Rectangle extends Shape {
     public void Draw(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         g2.setColor(this.color);
-        g2.drawRect(leftUpx, leftUpy, rightDownx - leftUpx, leftUpy - rightDowny);
+        g2.fillRect(leftUpx, leftUpy, rightDownx - leftUpx, rightDowny - leftUpy);
+        //g2.drawRect();
     }
 
 }

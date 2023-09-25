@@ -46,7 +46,7 @@ public class GUI extends JFrame {
         add(lbl1);
         add(lbl2);
         add(lbl3);
-        setSize(800, 500);
+        setBounds(0, 0, 800, 500);
         setVisible(true);
     }
     private String winner(){
