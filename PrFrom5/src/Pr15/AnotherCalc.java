@@ -77,7 +77,6 @@ public class AnotherCalc extends JFrame {
                 if (oper==""){
                     if (num1 != "0"){
                         num1+=button0.getText();
-                        System.out.println(num1);
                         numbers.setText(num1);
                     }
                 } else {
