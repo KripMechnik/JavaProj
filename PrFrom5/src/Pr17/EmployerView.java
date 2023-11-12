@@ -29,7 +29,7 @@ public class EmployerView extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 controller.IncreaseSalary();
-                ViewData(controller.GetName(), controller.GetPost(), controller.GetSalary());
+                controller.UpdateView();
             }
         });
 
@@ -37,14 +37,14 @@ public class EmployerView extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 controller.ReduceSalary();
-                ViewData(controller.GetName(), controller.GetPost(), controller.GetSalary());
+                controller.UpdateView();
             }
         });
 
         displayButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ViewData(controller.GetName(), controller.GetPost(), controller.GetSalary());
+                controller.UpdateView();
             }
         });
         frame.setVisible(true);
