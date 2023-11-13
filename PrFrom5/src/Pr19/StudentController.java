@@ -75,4 +75,16 @@ public class StudentController implements Comparator<Student> {
             quickSort(i, high);
     }
 
+    public Student FindStudent(String name, String surname) throws EmptyStringException{
+        if (name.equals("") || surname.equals("")){
+            throw new EmptyStringException("Не все поля заполнены");
+        }
+        for (int i = 0; i < models.size(); i++){
+            if (models.get(i).getName().equals(name) && models.get(i).getSurname().equals(surname)){
+                return models.get(i);
+            }
+        }
+        return null;
+    }
+
 }

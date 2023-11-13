@@ -17,7 +17,7 @@ public class StudentView extends JFrame {
 
     JLabel AllStudentsLabel = new JLabel("");
     public void GUI(StudentController controller){
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Студенты");
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int x = (screenSize.width - getWidth()) / 2;
         int y = (screenSize.height - getHeight()) / 2;
@@ -82,16 +82,29 @@ public class StudentView extends JFrame {
         });
 
         controller.UpdateView();
+
+        FindButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Student foundStudent = controller.FindStudent(NameTF.getText(), SurnameTF.getText());
+                    if (foundStudent == null){
+                        throw new NotFoundStudentException("Студент не найден");
+                    }
+                    JOptionPane.showMessageDialog(null, foundStudent.getName() + " " + foundStudent.getSurname() + " " + foundStudent.getGPA(), "Студент найден", JOptionPane.INFORMATION_MESSAGE);
+                } catch (EmptyStringException ex){
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                } catch (NotFoundStudentException ex){
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                }
+
+            }
+        });
         frame.setVisible(true);
     }
 
     public void ShowData(String name, String surname, double GPA){
         AllStudentsLabel.setText("<html>" + AllStudentsLabel.getText() + "<br/>" + name + " " + surname + "--" + GPA);
-    }
-    public static void main(String[] args) {
-        StudentView view = new StudentView();
-        StudentController controller = new StudentController(view);
-        view.GUI(controller);
     }
 
 }
