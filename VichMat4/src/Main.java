@@ -85,32 +85,30 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        double truth = 0.262459;
-        System.out.printf("Методом правых прямоугольников: %.2f отклонение: %.2f %%%n",
-                left_rects(0.4, 1.2, 10),
-                Math.abs(left_rects(0.4, 1.2, 10) / truth - 1) * 100);
-        System.out.printf("Методом левых прямоугольников: %.2f отклонение: %.2f %%%n",
-                right_rects(0.4, 1.2, 10),
-                Math.abs(right_rects(0.4, 1.2, 10) / truth - 1) * 100);
-        System.out.printf("Методом средних прямоугольников на 15 разбиений: %.2f отклонение: %.2f %%%n",
-                middle_rects(0.4, 1.2, 15),
-                Math.abs(middle_rects(0.4, 1.2, 15) / truth - 1) * 100);
-        System.out.printf("Методом средних прямоугольников на 20 разбиений: %.2f отклонение: %.2f %%%n",
-                middle_rects(0.4, 1.2, 20),
-                Math.abs(middle_rects(0.4, 1.2, 20) / truth - 1) * 100);
-        System.out.printf("Методом трапеций: %.2f отклонение: %.2f %%%n",
-                trap(0.4, 1.2, 10),
-                Math.abs(trap(0.4, 1.2, 10) / truth - 1) * 100);
-        System.out.printf("Методом Симпсона: %.2f отклонение: %.2f %%%n", bart_simpson(1.2, 2.0, 10),
-                Math.abs(bart_simpson(0.4, 1.2, 10) / truth - 1) * 100);
-        System.out.printf("Методом Монте Карло на 20: %.2f отклонение: %.2f %%%n",
-                monte_carlo(0.4, 1.2, 20),
-                Math.abs(monte_carlo(0.4, 1.2, 20) / truth - 1) * 100);
-        System.out.printf("Методом Монте Карло на 700: %.2f отклонение: %.2f %%%n",
-                monte_carlo(0.4, 1.2, 700),
-                Math.abs(monte_carlo(0.4, 1.2, 700) / truth - 1) * 100);
-        System.out.printf("Методом Монте Карло на 200: %.2f отклонение: %.2f %%%n",
-                monte_carlo(0.4, 1.2, 200),
-                Math.abs(monte_carlo(0.4, 1.2, 200) / truth - 1) * 100);
+        System.out.printf("Методом правых прямоугольников: %.2f \n",
+                left_rects(0.4, 1.2, 10));
+
+        System.out.printf("Методом левых прямоугольников: %.2f \n",
+                right_rects(0.4, 1.2, 10));
+
+        System.out.printf("Методом средних прямоугольников на 15 разбиений: %.2f \n",
+                middle_rects(0.4, 1.2, 15));
+
+        System.out.printf("Методом средних прямоугольников на 20 разбиений: %.2f \n",
+                middle_rects(0.4, 1.2, 20));
+
+        System.out.printf("Методом трапеций: %.2f \n",
+                trap(0.4, 1.2, 10));
+
+        System.out.printf("Методом Симпсона: %.2f \n", bart_simpson(1.2, 2.0, 10));
+
+        System.out.printf("Методом Монте Карло на 20: %.2f \n",
+                monte_carlo(0.4, 1.2, 20));
+
+        System.out.printf("Методом Монте Карло на 700: %.2f \n",
+                monte_carlo(0.4, 1.2, 700));
+
+        System.out.printf("Методом Монте Карло на 200: %.2f \n",
+                monte_carlo(0.4, 1.2, 200));
     }
 }
